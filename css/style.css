@@ -504,16 +504,18 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 /* Service */
-.service .container
-{
+.service .container {
     padding-bottom: 40px;
 }
-.service .service-item
-{
+
+.service .service-item {
     margin-bottom: 30px;
     flex: 0 0 33.33%;
     max-width: 33.33%;
+    display: flex;
+    justify-content: center;
 }
+
 .service .service-item .service-item-inner {
     background-color: var(--bg-black-100);
     border: 1px solid var(--bg-black-50);
@@ -521,33 +523,43 @@ h3.my-profession {
     padding: 30px 15px;
     text-align: center;
     transition: all 0.3s ease;
+    max-width: 300px;
+    min-height: 300px;
 }
+
 .service .service-item .service-item-inner:hover {
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
+
 .service .service-item .service-item-inner .icon {
-    height: 60px;
-    width: 60px;
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
-    
-    display: block;
-    margin: 0 auto 30px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
     text-align: center;
     transition: all 0.3s ease;
 }
-.service .service-item .service-item-inner .icon .fa {
-    font-size: 40px;
-    line-height: 60px;
-    color: var(--skin-color);
+
+.service .service-item .service-item-inner .icon .fa,
+.service .service-item .service-item-inner .icon img {
+    max-width: 60%;
+    max-height: 60%;
     transition: all 0.3s ease;
 }
+
 .service .service-item .service-item-inner:hover .icon {
     background: var(--skin-color);
 }
-.service .service-item .service-item-inner:hover .icon .fa {
-    font-size: 25px;
-    color: #ffffff;
+
+.service .service-item .service-item-inner:hover .icon .fa,
+.service .service-item .service-item-inner:hover .icon img {
+    transform: scale(1.2);
 }
+
 .service .service-item .service-item-inner h4 {
     font-size: 18px;
     margin-bottom: 15px;
@@ -555,11 +567,29 @@ h3.my-profession {
     font-weight: 700;
     text-transform: capitalize;
 }
+
 .service .service-item .service-item-inner p {
     font-size: 16px;
     color: var(--text-black-700);
     line-height: 25px;
+    margin-bottom: 0;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .service .service-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .service .service-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
 /*Portfolio*/
 .portfolio .container {
     padding-bottom: 40px;
@@ -612,10 +642,11 @@ h3.my-profession {
 .contact .contact-info-item .icon {
     display: inline-block;
 }
-.contact .contact-info-item .icon .fa {
+.contact .contact-info-item .icon i {
     font-size: 25px;
-    color: var(--skin-color);
+    color: var(--skin-color); /* Use your primary theme color */
 }
+
 .contact .contact-info-item h4 {
     font-size: 18px;
     font-weight: 700;
